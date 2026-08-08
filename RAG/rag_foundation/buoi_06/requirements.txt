@@ -1,0 +1,8 @@
+# Workshop demo dependencies
+python-dotenv>=1.0.0
+
+# Add the main AI/RAG libraries here when needed
+# streamlit
+# langchain
+# sentence-transformers
+# faiss-cpu

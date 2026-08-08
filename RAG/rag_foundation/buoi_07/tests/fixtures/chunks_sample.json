@@ -1,0 +1,42 @@
+[
+  {
+    "chunk_id": "chunk-001",
+    "strategy": "hierarchical",
+    "source": "sample-doc-1",
+    "page_start": 1,
+    "page_end": 2,
+    "text": "Đây là chunk mẫu cho hệ thống RAG ở buổi 07."
+  },
+  {
+    "chunk_id": "chunk-002",
+    "strategy": "hierarchical",
+    "source": "sample-doc-1",
+    "page_start": 3,
+    "page_end": 4,
+    "text": "Chunk này mô phỏng nội dung phân cấp cho bài demo."
+  },
+  {
+    "chunk_id": "chunk-003",
+    "strategy": "semantic",
+    "source": "sample-doc-2",
+    "page_start": 2,
+    "page_end": 2,
+    "text": "Chunk semantic dùng để thử retrieval theo ngữ nghĩa."
+  },
+  {
+    "chunk_id": "chunk-004",
+    "strategy": "fixed-size",
+    "source": "sample-doc-3",
+    "page_start": 5,
+    "page_end": 5,
+    "text": "Chunk fixed-size mô phỏng một phần tài liệu ngắn."
+  },
+  {
+    "chunk_id": "chunk-005",
+    "strategy": "hierarchical",
+    "source": "sample-doc-4",
+    "page_start": 7,
+    "page_end": 8,
+    "text": "Chunk có khoảng trang cho kiểm tra metadata."
+  }
+]
