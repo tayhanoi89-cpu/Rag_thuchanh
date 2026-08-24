@@ -1,0 +1,74 @@
+[
+  {
+    "query_id": "Q01",
+    "question": "\u0110i\u1ec1u 7 quy \u0111\u1ecbnh nh\u01b0 th\u1ebf n\u00e0o v\u1ec1 c\u01a1 c\u1ea5u l\u1ea1i th\u1eddi h\u1ea1n tr\u1ea3 n\u1ee3?",
+    "relevant_chunk_ids": [
+      "chunk-01"
+    ],
+    "scope": "in_scope",
+    "needs_human_review": true
+  },
+  {
+    "query_id": "Q02",
+    "question": "Kh\u00e1ch h\u00e0ng g\u1eb7p kh\u00f3 kh\u0103n c\u00f3 th\u1ec3 \u0111\u01b0\u1ee3c \u0111i\u1ec1u ch\u1ec9nh k\u1ef3 h\u1ea1n tr\u1ea3 n\u1ee3 ra sao?",
+    "relevant_chunk_ids": [
+      "chunk-02"
+    ],
+    "scope": "in_scope",
+    "needs_human_review": true
+  },
+  {
+    "query_id": "Q03",
+    "question": "Ph\u00e2n lo\u1ea1i n\u1ee3 v\u00e0 tr\u00edch l\u1eadp d\u1ef1 ph\u00f2ng \u0111\u01b0\u1ee3c th\u1ef1c hi\u1ec7n nh\u01b0 th\u1ebf n\u00e0o?",
+    "relevant_chunk_ids": [
+      "chunk-03"
+    ],
+    "scope": "in_scope",
+    "needs_human_review": true
+  },
+  {
+    "query_id": "Q04",
+    "question": "\u0110i\u1ec1u ki\u1ec7n \u0111\u1ec3 c\u01a1 c\u1ea5u l\u1ea1i n\u1ee3 \u0111\u01b0\u1ee3c \u00e1p d\u1ee5ng l\u00e0 g\u00ec?",
+    "relevant_chunk_ids": [
+      "chunk-04"
+    ],
+    "scope": "in_scope",
+    "needs_human_review": true
+  },
+  {
+    "query_id": "Q05",
+    "question": "C\u00e1c b\u00ean li\u00ean quan trong c\u01a1 c\u1ea5u l\u1ea1i n\u1ee3 g\u1ed3m nh\u1eefng ai?",
+    "relevant_chunk_ids": [
+      "chunk-05"
+    ],
+    "scope": "in_scope",
+    "needs_human_review": true
+  },
+  {
+    "query_id": "Q06",
+    "question": "M\u1ed9t doanh nghi\u1ec7p c\u00f3 th\u1ec3 xin gia h\u1ea1n th\u1eddi h\u1ea1n tr\u1ea3 n\u1ee3 kh\u00f4ng?",
+    "relevant_chunk_ids": [
+      "chunk-06"
+    ],
+    "scope": "in_scope",
+    "needs_human_review": true
+  },
+  {
+    "query_id": "Q07",
+    "question": "N\u1ee3 qu\u00e1 h\u1ea1n c\u00f3 \u0111\u01b0\u1ee3c chuy\u1ec3n th\u00e0nh n\u1ee3 c\u00f3 kh\u1ea3 n\u0103ng m\u1ea5t kh\u00f4ng?",
+    "relevant_chunk_ids": [
+      "chunk-07"
+    ],
+    "scope": "in_scope",
+    "needs_human_review": true
+  },
+  {
+    "query_id": "Q08",
+    "question": "Ng\u00e2n h\u00e0ng n\u00e0o c\u00f3 l\u00e3i su\u1ea5t ti\u1ebft ki\u1ec7m cao nh\u1ea5t h\u00f4m nay?",
+    "relevant_chunk_ids": [
+      "chunk-08"
+    ],
+    "scope": "out_of_scope",
+    "needs_human_review": true
+  }
+]

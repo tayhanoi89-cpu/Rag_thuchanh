@@ -1,0 +1,11 @@
+[
+  {
+    "question_id": "Q01",
+    "question": "Điều kiện vay vốn và những nhu cầu vốn không được cho vay được quy định thế nào?",
+    "question_type": "multi_aspect",
+    "relevant_child_ids": [],
+    "relevant_parent_ids": [],
+    "needs_human_review": true,
+    "notes": "Placeholder evaluation set for Buổi 09"
+  }
+]

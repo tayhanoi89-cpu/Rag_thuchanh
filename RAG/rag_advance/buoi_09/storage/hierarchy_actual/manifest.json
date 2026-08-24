@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "strategy": "hierarchical",
+  "input_file_fingerprints": {
+    "TT_02_2023_NHNN__fixed-size.json": "72ccddec994b31c6ec5118d7efe230fc824215da6ac1ee4489b3cc682faac69a",
+    "TT_02_2023_NHNN__hierarchical.json": "d9a781afc7c4f3272ab2acad036bf7f32a3fe15778f9762fb490e1fe626e4d10",
+    "TT_02_2023_NHNN__semantic.json": "337ddd90d803bf31a92fe3bb6d80e6ff3bc7302aeaf7a105941b073de4b40b32",
+    "TT_06_2023_NHNN__fixed-size.json": "f185702559945c0f3d9c769068ce63180f0f39c2d3c31818ba3f37c8e58ab2ca",
+    "TT_06_2023_NHNN__hierarchical.json": "665409af337831bd0c87fc34be705e1f4595aae00e4a948d7d7bcf8dbe974ab1",
+    "TT_06_2023_NHNN__semantic.json": "04bb5c1546faa6ed2fcc77591190b82107ea05730763f3a9389532133cc7881d",
+    "TT_39_2016_NHNN__fixed-size.json": "548ed9550885798c4438a8429cecf921be83ae5c8057af81cfb1313138bd6286",
+    "TT_39_2016_NHNN__hierarchical.json": "93db846c8b786b48ff2853a63033f09215f4b966c581b48304874a27eb29f68b",
+    "TT_39_2016_NHNN__semantic.json": "01eae5c181da3269305464e3b3b6b4b11d496951d5f93bb8201d350087ac20e3"
+  },
+  "config_identity": {
+    "MULTI_QUERY_COUNT": 3,
+    "MULTI_QUERY_MAX_CHARS": 300,
+    "MULTI_QUERY_TEMPERATURE": 0.2,
+    "MULTI_QUERY_ORIGINAL_WEIGHT": 1.5,
+    "MULTI_QUERY_VARIANT_WEIGHT": 1.0,
+    "MULTI_QUERY_RRF_K": 60,
+    "PER_QUERY_CANDIDATES": 12,
+    "PARENT_MAX_CHARS": 6000,
+    "PARENT_SCORE_CHILD_LIMIT": 3,
+    "PARENT_RRF_K": 60,
+    "PARENT_CANDIDATES": 10,
+    "FINAL_PARENT_TOP_K": 3,
+    "TOTAL_CONTEXT_MAX_CHARS": 16000
+  },
+  "counts": {
+    "child_count": 318,
+    "parent_count": 76,
+    "warning_count": 63
+  },
+  "warning_counts": {},
+  "build_timestamp": "2026-08-08T13:19:10Z"
+}

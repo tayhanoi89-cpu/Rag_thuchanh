@@ -1,0 +1,121 @@
+﻿source_doc_id,entity,entity_type,source,method,confidence,evidence
+166170,Quốc hội,CoQuan,co_quan_ban_hanh,metadata,0.95,Quốc hội
+166170,Vương Đình Huệ,NguoiKy,nguoi_ky,metadata,0.95,Vương Đình Huệ
+166170,Tín dụng,LinhVuc,linh_vuc,metadata,0.95,Tín dụng
+112025,Chính phủ,CoQuan,co_quan_ban_hanh,metadata,0.95,Chính phủ
+112025,Nguyễn Xuân Phúc,NguoiKy,nguoi_ky,metadata,0.95,Nguyễn Xuân Phúc
+38128,Ngân hàng Nhà nước Việt Nam,CoQuan,co_quan_ban_hanh,metadata,0.95,Ngân hàng Nhà nước Việt Nam
+38128,Đào Minh Tú,NguoiKy,nguoi_ky,metadata,0.95,Đào Minh Tú
+38128,Phát hành và kho quỹ,LinhVuc,linh_vuc,metadata,0.95,Phát hành và kho quỹ
+26750,Quốc hội,CoQuan,co_quan_ban_hanh,metadata,0.95,Quốc hội
+26750,Nguyễn Phú Trọng,NguoiKy,nguoi_ky,metadata,0.95,Nguyễn Phú Trọng
+163441,Chính phủ,CoQuan,co_quan_ban_hanh,metadata,0.95,Chính phủ
+163441,Lê Minh Khái,NguoiKy,nguoi_ky,metadata,0.95,Lê Minh Khái
+163441,Bảo hiểm,LinhVuc,linh_vuc,metadata,0.95,Bảo hiểm
+146468,Chính phủ,CoQuan,co_quan_ban_hanh,metadata,0.95,Chính phủ
+146468,Nguyễn Xuân Phúc,NguoiKy,nguoi_ky,metadata,0.95,Nguyễn Xuân Phúc
+146468,Chứng khoán,LinhVuc,linh_vuc,metadata,0.95,Chứng khoán
+168220,Ngân hàng Nhà nước Việt Nam,CoQuan,co_quan_ban_hanh,metadata,0.95,Ngân hàng Nhà nước Việt Nam
+168220,Đào Minh Tú,NguoiKy,nguoi_ky,metadata,0.95,Đào Minh Tú
+168220,"Thanh tra, giám sát ngân hàng",LinhVuc,linh_vuc,metadata,0.95,"Thanh tra, giám sát ngân hàng"
+133858,Chính phủ,CoQuan,co_quan_ban_hanh,metadata,0.95,Chính phủ
+133858,Nguyễn Xuân Phúc,NguoiKy,nguoi_ky,metadata,0.95,Nguyễn Xuân Phúc
+169221,Ngân hàng Nhà nước Việt Nam,CoQuan,co_quan_ban_hanh,metadata,0.95,Ngân hàng Nhà nước Việt Nam
+169221,Phạm Thanh Hà,NguoiKy,nguoi_ky,metadata,0.95,Phạm Thanh Hà
+169221,Quản lý ngoại hối,LinhVuc,linh_vuc,metadata,0.95,Quản lý ngoại hối
+95652,Chính phủ,CoQuan,co_quan_ban_hanh,metadata,0.95,Chính phủ
+95652,Nguyễn Tấn Dũng,NguoiKy,nguoi_ky,metadata,0.95,Nguyễn Tấn Dũng
+f69936f0-6937-11f1-a48d-29bc6b0fd706,Bộ Tài chính,CoQuan,co_quan_ban_hanh,metadata,0.95,Bộ Tài chính
+f69936f0-6937-11f1-a48d-29bc6b0fd706,Nguyễn Đức Chi,NguoiKy,nguoi_ky,metadata,0.95,Nguyễn Đức Chi
+30402,Bộ Tài chính,CoQuan,co_quan_ban_hanh,metadata,0.95,Bộ Tài chính
+30402,Trần Xuân Hà,NguoiKy,nguoi_ky,metadata,0.95,Trần Xuân Hà
+30402,Quản lý dịch vụ tài chính và các quỹ tài chính,LinhVuc,linh_vuc,metadata,0.95,Quản lý dịch vụ tài chính và các quỹ tài chính
+173460,Ngân hàng Nhà nước Việt Nam,CoQuan,co_quan_ban_hanh,metadata,0.95,Ngân hàng Nhà nước Việt Nam
+173460,Đoàn Thái Sơn,NguoiKy,nguoi_ky,metadata,0.95,Đoàn Thái Sơn
+173460,"Thanh tra, giám sát ngân hàng",LinhVuc,linh_vuc,metadata,0.95,"Thanh tra, giám sát ngân hàng"
+27257,Ngân hàng Nhà nước Việt Nam,CoQuan,co_quan_ban_hanh,metadata,0.95,Ngân hàng Nhà nước Việt Nam
+27257,Trần Minh Tuấn,NguoiKy,nguoi_ky,metadata,0.95,Trần Minh Tuấn
+143217,Bộ Tài chính,CoQuan,co_quan_ban_hanh,metadata,0.95,Bộ Tài chính
+168859,Ngân hàng Nhà nước Việt Nam,CoQuan,co_quan_ban_hanh,metadata,0.95,Ngân hàng Nhà nước Việt Nam
+168859,Đào Minh Tú,NguoiKy,nguoi_ky,metadata,0.95,Đào Minh Tú
+168859,"Thanh tra, giám sát ngân hàng",LinhVuc,linh_vuc,metadata,0.95,"Thanh tra, giám sát ngân hàng"
+150974,Bộ Tài chính,CoQuan,co_quan_ban_hanh,metadata,0.95,Bộ Tài chính
+150974,Tạ Anh Tuấn,NguoiKy,nguoi_ky,metadata,0.95,Tạ Anh Tuấn
+150974,"Kế toán, kiểm toán",LinhVuc,linh_vuc,metadata,0.95,"Kế toán, kiểm toán"
+164719,Ngân hàng Nhà nước Việt Nam,CoQuan,co_quan_ban_hanh,metadata,0.95,Ngân hàng Nhà nước Việt Nam
+164719,Đoàn Thái Sơn,NguoiKy,nguoi_ky,metadata,0.95,Đoàn Thái Sơn
+164719,"Thanh tra, giám sát ngân hàng",LinhVuc,linh_vuc,metadata,0.95,"Thanh tra, giám sát ngân hàng"
+173695,Ngân hàng Nhà nước Việt Nam,CoQuan,co_quan_ban_hanh,metadata,0.95,Ngân hàng Nhà nước Việt Nam
+173695,Đoàn Thái Sơn,NguoiKy,nguoi_ky,metadata,0.95,Đoàn Thái Sơn
+173695,"Thanh tra, giám sát ngân hàng",LinhVuc,linh_vuc,metadata,0.95,"Thanh tra, giám sát ngân hàng"
+186482,Ngân hàng Nhà nước Việt Nam,CoQuan,co_quan_ban_hanh,metadata,0.95,Ngân hàng Nhà nước Việt Nam
+186482,Đoàn Thái Sơn,NguoiKy,nguoi_ky,metadata,0.95,Đoàn Thái Sơn
+186482,Cục An toàn hệ thống các tổ chức tín dụng,LinhVuc,linh_vuc,metadata,0.95,Cục An toàn hệ thống các tổ chức tín dụng
+112924,Bộ Tài chính,CoQuan,co_quan_ban_hanh,metadata,0.95,Bộ Tài chính
+112924,Trần Xuân Hà,NguoiKy,nguoi_ky,metadata,0.95,Trần Xuân Hà
+174218,Ngân hàng Nhà nước Việt Nam,CoQuan,co_quan_ban_hanh,metadata,0.95,Ngân hàng Nhà nước Việt Nam
+174218,Đoàn Thái Sơn,NguoiKy,nguoi_ky,metadata,0.95,Đoàn Thái Sơn
+174218,"Thanh tra, giám sát ngân hàng",LinhVuc,linh_vuc,metadata,0.95,"Thanh tra, giám sát ngân hàng"
+186888,Ngân hàng Nhà nước Việt Nam,CoQuan,co_quan_ban_hanh,metadata,0.95,Ngân hàng Nhà nước Việt Nam
+186888,Đoàn Thái Sơn,NguoiKy,nguoi_ky,metadata,0.95,Đoàn Thái Sơn
+186888,Cục An toàn hệ thống các tổ chức tín dụng,LinhVuc,linh_vuc,metadata,0.95,Cục An toàn hệ thống các tổ chức tín dụng
+6e689cd0-6f81-11f1-94d6-fd5d6d5ff793,Ngân hàng Nhà nước Việt Nam,CoQuan,co_quan_ban_hanh,metadata,0.95,Ngân hàng Nhà nước Việt Nam
+6e689cd0-6f81-11f1-94d6-fd5d6d5ff793,Đoàn Thái Sơn,NguoiKy,nguoi_ky,metadata,0.95,Đoàn Thái Sơn
+185630,Ngân hàng Nhà nước Việt Nam,CoQuan,co_quan_ban_hanh,metadata,0.95,Ngân hàng Nhà nước Việt Nam
+185630,Đoàn Thái Sơn,NguoiKy,nguoi_ky,metadata,0.95,Đoàn Thái Sơn
+185630,"Lao động, tiền lương, tiền công",LinhVuc,linh_vuc,metadata,0.95,"Lao động, tiền lương, tiền công"
+117310,Ngân hàng Nhà nước Việt Nam,CoQuan,co_quan_ban_hanh,metadata,0.95,Ngân hàng Nhà nước Việt Nam
+117310,Nguyễn Đồng Tiến,NguoiKy,nguoi_ky,metadata,0.95,Nguyễn Đồng Tiến
+117310,"Thanh tra, giám sát ngân hàng",LinhVuc,linh_vuc,metadata,0.95,"Thanh tra, giám sát ngân hàng"
+166269,Quốc hội,CoQuan,co_quan_ban_hanh,metadata,0.95,Quốc hội
+166269,Vương Đình Huệ,NguoiKy,nguoi_ky,metadata,0.95,Vương Đình Huệ
+177271,Ngân hàng Nhà nước Việt Nam,CoQuan,co_quan_ban_hanh,metadata,0.95,Ngân hàng Nhà nước Việt Nam
+177271,Đoàn Thái Sơn,NguoiKy,nguoi_ky,metadata,0.95,Đoàn Thái Sơn
+177271,Cục An toàn hệ thống các tổ chức tín dụng,LinhVuc,linh_vuc,metadata,0.95,Cục An toàn hệ thống các tổ chức tín dụng
+44209,Ngân hàng Nhà nước Việt Nam,CoQuan,co_quan_ban_hanh,metadata,0.95,Ngân hàng Nhà nước Việt Nam
+44209,Đào Minh Tú,NguoiKy,nguoi_ky,metadata,0.95,Đào Minh Tú
+44209,Phát hành và kho quỹ,LinhVuc,linh_vuc,metadata,0.95,Phát hành và kho quỹ
+25692,Quốc hội,CoQuan,co_quan_ban_hanh,metadata,0.95,Quốc hội
+25692,Nguyễn Phú Trọng,NguoiKy,nguoi_ky,metadata,0.95,Nguyễn Phú Trọng
+166170,Tổ chức tín dụng,DoiTuongApDung,content_clean,gemini,1.0,1. Tổ chức tín dụng.
+166170,Chi nhánh ngân hàng nước ngoài,DoiTuongApDung,content_clean,gemini,1.0,2. Chi nhánh ngân hàng nước ngoài.
+166170,"Văn phòng đại diện tại Việt Nam của tổ chức tín dụng nước ngoài, tổ chức nước ngoài khác có hoạt động ngân hàng",DoiTuongApDung,content_clean,gemini,1.0,"3. Văn phòng đại diện tại Việt Nam của tổ chức tín dụng nước ngoài, tổ chức nước ngoài khác có hoạt động ngân hàng (sau đây gọi là văn phòng đại diện nước ngoài)."
+166170,"Tổ chức mà Nhà nước sở hữu 100% vốn điều lệ có chức năng mua, bán, xử lý nợ",DoiTuongApDung,content_clean,gemini,1.0,"4. Tổ chức mà Nhà nước sở hữu 100% vốn điều lệ có chức năng mua, bán, xử lý nợ (sau đây gọi là tổ chức mua bán, xử lý nợ)."
+166170,"Cơ quan, tổ chức, cá nhân có liên quan đến việc thành lập, tổ chức, hoạt động, can thiệp sớm, kiểm soát đặc biệt, tổ chức lại, giải thể, phá sản tổ chức tín dụng; việc thành lập, tổ chức, hoạt động, can thiệp sớm, giải thể, chấm dứt hoạt động của chi nhánh ngân hàng nước ngoài; việc thành lập, hoạt động của văn phòng đại diện nước ngoài; việc xử lý nợ xấu, tài sản bảo đảm của khoản nợ xấu của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài, tổ chức mua bán, xử lý nợ",DoiTuongApDung,content_clean,gemini,1.0,"5. Cơ quan, tổ chức, cá nhân có liên quan đến việc thành lập, tổ chức, hoạt động, can thiệp sớm, kiểm soát đặc biệt, tổ chức lại, giải thể, phá sản tổ chức tín dụng; việc thành lập, tổ chức, hoạt động, can thiệp sớm, giải thể, chấm dứt hoạt động của chi nhánh ngân hàng nước ngoài; việc thành lập, hoạt động của văn phòng đại diện nước ngoài; việc xử lý nợ xấu, tài sản bảo đảm của khoản nợ xấu của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài, tổ chức mua bán, xử lý nợ."
+38128,Các đơn vị có liên quan thuộc Ngân hàng Nhà nước,DoiTuongApDung,content_clean,gemini,1.0,1. Các đơn vị có liên quan thuộc Ngân hàng Nhà nước.
+38128,Nhà máy in tiền Quốc gia,DoiTuongApDung,content_clean,gemini,1.0,2. Nhà máy in tiền Quốc gia.
+38128,"Tổ chức, cá nhân khác có liên quan đến công việc thiết kế mẫu tiền, chế tạo bản in, khuôn đúc và in, đúc tiền",DoiTuongApDung,content_clean,gemini,1.0,"3. Tổ chức, cá nhân khác có liên quan đến công việc thiết kế mẫu tiền, chế tạo bản in, khuôn đúc và in, đúc tiền."
+163441,"Doanh nghiệp bảo hiểm phi nhân thọ, doanh nghiệp bảo hiểm nhân thọ, doanh nghiệp bảo hiểm sức khỏe, doanh nghiệp tái bảo hiểm, đại lý bảo hiểm, doanh nghiệp môi giới bảo hiểm, tổ chức, cá nhân cung cấp dịch vụ phụ trợ bảo hiểm, tổ chức tương hỗ cung cấp bảo hiểm vi mô",DoiTuongApDung,content_clean,gemini,0.95,"Doanh nghiệp bảo hiểm phi nhân thọ, doanh nghiệp bảo hiểm nhân thọ, doanh nghiệp bảo hiểm sức khỏe (sau đây gọi là doanh nghiệp bảo hiểm), doanh nghiệp tái bảo hiểm, đại lý bảo hiểm, doanh nghiệp môi giới bảo hiểm, tổ chức, cá nhân cung cấp dịch vụ phụ trợ bảo hiểm, tổ chức tương hỗ cung cấp bảo hiểm vi mô."
+163441,"Chi nhánh doanh nghiệp bảo hiểm phi nhân thọ nước ngoài, chi nhánh doanh nghiệp tái bảo hiểm nước ngoài",DoiTuongApDung,content_clean,gemini,0.95,"Chi nhánh doanh nghiệp bảo hiểm phi nhân thọ nước ngoài, chi nhánh doanh nghiệp tái bảo hiểm nước ngoài (sau đây gọi là chi nhánh nước ngoài tại Việt Nam)"
+163441,"Văn phòng đại diện của doanh nghiệp bảo hiểm nước ngoài, doanh nghiệp tái bảo hiểm nước ngoài, doanh nghiệp môi giới bảo hiểm nước ngoài, tập đoàn tài chính, bảo hiểm nước ngoài tại Việt Nam",DoiTuongApDung,content_clean,gemini,0.95,"Văn phòng đại diện của doanh nghiệp bảo hiểm nước ngoài, doanh nghiệp tái bảo hiểm nước ngoài, doanh nghiệp môi giới bảo hiểm nước ngoài, tập đoàn tài chính, bảo hiểm nước ngoài tại Việt Nam (sau đây gọi là văn phòng đại diện nước ngoài tại Việt Nam)."
+163441,"Bên mua bảo hiểm, người được bảo hiểm, người thụ hưởng",DoiTuongApDung,content_clean,gemini,0.95,"Bên mua bảo hiểm, người được bảo hiểm, người thụ hưởng"
+163441,Cơ quan quản lý nhà nước về hoạt động kinh doanh bảo hiểm,DoiTuongApDung,content_clean,gemini,0.95,Cơ quan quản lý nhà nước về hoạt động kinh doanh bảo hiểm.
+163441,Tổ chức và cá nhân có liên quan đến hoạt động kinh doanh bảo hiểm,DoiTuongApDung,content_clean,gemini,0.95,Tổ chức và cá nhân có liên quan đến hoạt động kinh doanh bảo hiểm.
+168220,Ngân hàng hợp tác xã,DoiTuongApDung,content_clean,gemini,1.0,1. Ngân hàng hợp tác xã.
+168220,Quỹ tín dụng nhân dân,DoiTuongApDung,content_clean,gemini,1.0,2. Quỹ tín dụng nhân dân.
+168220,"Tổ chức, cá nhân có liên quan đến phạm vi điều chỉnh quy định tại Điều 1 Thông tư này",DoiTuongApDung,content_clean,gemini,1.0,"3. Tổ chức, cá nhân có liên quan đến phạm vi điều chỉnh quy định tại Điều 1 Thông tư này."
+133858,"Các bộ, cơ quan ngang bộ, cơ quan thuộc Chính phủ",DoiTuongApDung,content_clean,gemini,1.0,"a) Các bộ, cơ quan ngang bộ, cơ quan thuộc Chính phủ;"
+133858,"Ủy ban nhân dân các tỉnh, thành phố trực thuộc trung ương",DoiTuongApDung,content_clean,gemini,1.0,"b) Ủy ban nhân dân các tỉnh, thành phố trực thuộc trung ương;"
+133858,Các đơn vị sự nghiệp công lập,DoiTuongApDung,content_clean,gemini,1.0,c) Các đơn vị sự nghiệp công lập;
+133858,Các doanh nghiệp,DoiTuongApDung,content_clean,gemini,1.0,d) Các doanh nghiệp;
+133858,"Các tổ chức, cá nhân khác có liên quan đến hoạt động kiểm toán nội bộ",DoiTuongApDung,content_clean,gemini,1.0,"đ) Các tổ chức, cá nhân khác có liên quan đến hoạt động kiểm toán nội bộ."
+95652,Tổ chức kinh tế theo quy định tại Khoản 16 Điều 3 Luật Đầu tư,DoiTuongApDung,content_clean,gemini,0.95,a) Tổ chức kinh tế theo quy định tại Khoản 16 Điều 3 Luật Đầu tư;
+95652,Cá nhân có quốc tịch Việt Nam thuộc đối tượng được tham gia chương trình thưởng cổ phiếu phát hành ở nước ngoài,DoiTuongApDung,content_clean,gemini,0.95,b) Cá nhân có quốc tịch Việt Nam thuộc đối tượng được tham gia chương trình thưởng cổ phiếu phát hành ở nước ngoài.
+95652,Các cơ quan quản lý nhà nước tham gia quản lý hoạt động đầu tư gián tiếp ra nước ngoài,DoiTuongApDung,content_clean,gemini,0.9,Các cơ quan quản lý nhà nước tham gia quản lý hoạt động đầu tư gián tiếp ra nước ngoài theo quy định tại Nghị định này.
+95652,"Các tổ chức, cá nhân khác có liên quan đến hoạt động đầu tư gián tiếp ra nước ngoài",DoiTuongApDung,content_clean,gemini,0.9,"Các tổ chức, cá nhân khác có liên quan đến hoạt động đầu tư gián tiếp ra nước ngoài."
+95652,đầu tư gián tiếp ra nước ngoài,LinhVuc,content_clean,gemini,0.9,Chính phủ ban hành Nghị định quy định về đầu tư giá n tiếp ra nước ngoài.
+f69936f0-6937-11f1-a48d-29bc6b0fd706,"Tổ chức, cá nhân Việt Nam và tổ chức, cá nhân nước ngoài thực hiện hành vi vi phạm hành chính trong lĩnh vực chứng khoán và thị trường chứng khoán",DoiTuongApDung,content_clean,gemini,0.95,"Tổ chức, cá nhân Việt Nam và tổ chức, cá nhân nước ngoài (sau đây gọi chung là Tổ chức, cá nhân) thực hiện hành vi vi phạm hành chính trong lĩnh vực chứng khoán và thị trường chứng khoán quy định tại Nghị định này."
+f69936f0-6937-11f1-a48d-29bc6b0fd706,chứng khoán và thị trường chứng khoán,LinhVuc,content_clean,gemini,0.95,Quy định xử phạt vi phạm hành chính trong lĩnh vực chứng khoán và thị trường chứng khoán
+30402,"Kiểm toán viên đăng ký hành nghề tại doanh nghiệp kiểm toán, chi nhánh doanh nghiệp kiểm toán nước ngoài tại Việt Nam",DoiTuongApDung,content_clean,gemini,1.0,"1. Kiểm toán viên đăng ký hành nghề tại doanh nghiệp kiểm toán, chi nhánh doanh nghiệp kiểm toán nước ngoài tại Việt Nam."
+30402,"Doanh nghiệp kiểm toán, chi nhánh doanh nghiệp kiểm toán nước ngoài tại Việt Nam",DoiTuongApDung,content_clean,gemini,1.0,"2. Doanh nghiệp kiểm toán, chi nhánh doanh nghiệp kiểm toán nước ngoài tại Việt Nam (sau đây gọi chung là doanh nghiệp kiểm toán)."
+30402,"Tổ chức, cá nhân có liên quan đến việc đăng ký, quản lý và công khai danh sách kiểm toán viên hành nghề kiểm toán",DoiTuongApDung,content_clean,gemini,1.0,"3. Tổ chức, cá nhân có liên quan đến việc đăng ký, quản lý và công khai danh sách kiểm toán viên hành nghề kiểm toán."
+27257,Tổ chức tín dụng,DoiTuongApDung,content_clean,gemini,1.0,1. Tổ chức tín dụng;
+27257,Chi nhánh ngân hàng nước ngoài,DoiTuongApDung,content_clean,gemini,1.0,2. Chi nhánh ngân hàng nước ngoài;
+27257,"Tổ chức, cá nhân có liên quan đến hệ thống kiểm soát nội bộ và kiểm toán nội bộ của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài",DoiTuongApDung,content_clean,gemini,1.0,"3. Tổ chức, cá nhân có liên quan đến hệ thống kiểm soát nội bộ và kiểm toán nội bộ của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài."
+112025,bảo hiểm,LinhVuc,content_clean,gemini,0.95,tăng cường vai trò tự quản trong lĩnh vực bảo hiểm
+112025,kinh doanh bảo hiểm,LinhVuc,content_clean,gemini,0.95,thi hành một số điều của Luật kinh doanh bảo hiểm
+112025,Chi nhánh nước ngoài,DoiTuongApDung,content_clean,gemini,1.0,b) Chi nhánh nước ngoài;
+112025,Doanh nghiệp môi giới bảo hiểm,DoiTuongApDung,content_clean,gemini,1.0,"c) Doanh nghiệp môi giới bảo hiểm, đại lý bảo hiểm;"
+112025,đại lý bảo hiểm,DoiTuongApDung,content_clean,gemini,1.0,"c) Doanh nghiệp môi giới bảo hiểm, đại lý bảo hiểm;"
+112025,"Các tổ chức, cá nhân khác có liên quan",DoiTuongApDung,content_clean,gemini,1.0,"d) Các tổ chức, cá nhân khác có liên quan."
+146468,"Tổ chức, cá nhân Việt Nam và tổ chức, cá nhân nước ngoài thực hiện hành vi vi phạm hành chính trong lĩnh vực chứng khoán và thị trường chứng khoán quy định tại Nghị định này",DoiTuongApDung,content_clean,gemini,1.0,"Tổ chức, cá nhân Việt Nam và tổ chức, cá nhân nước ngoài (sau đây gọi chung là tổ chức, cá nhân) thực hiện hành vi vi phạm hành chính trong lĩnh vực chứng khoán và thị trường chứng khoán quy định tại Nghị định này."

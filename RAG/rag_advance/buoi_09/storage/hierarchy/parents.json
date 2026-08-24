@@ -1,0 +1,108 @@
+[
+  {
+    "parent_id": "790b53d86c4bed08",
+    "source": "other.pdf",
+    "page_start": 3,
+    "page_end": 4,
+    "article_key": "Điều 4",
+    "window_index": 1,
+    "child_ids": [
+      "sample:0006"
+    ],
+    "text": "Điều 4. Một quy định khác",
+    "char_count": 25,
+    "ambiguous_child_count": 0,
+    "warnings": [],
+    "structural_path": {
+      "chapter": null,
+      "article": "Điều 4",
+      "clause": null,
+      "point": null
+    }
+  },
+  {
+    "parent_id": "ef98206907b3f97c",
+    "source": "sample.pdf",
+    "page_start": 1,
+    "page_end": 2,
+    "article_key": "Điều 1",
+    "window_index": 1,
+    "child_ids": [
+      "sample:0001"
+    ],
+    "text": "# Chương I\n# Điều 1. Điều kiện cho vay xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "char_count": 361,
+    "ambiguous_child_count": 0,
+    "warnings": [],
+    "structural_path": {
+      "chapter": "Chương I",
+      "article": "Điều 1",
+      "clause": null,
+      "point": null
+    }
+  },
+  {
+    "parent_id": "cc044230ab360cd4",
+    "source": "sample.pdf",
+    "page_start": 1,
+    "page_end": 2,
+    "article_key": "Điều 2",
+    "window_index": 1,
+    "child_ids": [
+      "sample:0002",
+      "sample:0003"
+    ],
+    "text": "Điều 2. Điều kiện vay vốn yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy\n\nCác điều kiện cho vay được quy định tại Điều 2.",
+    "char_count": 265,
+    "ambiguous_child_count": 2,
+    "warnings": [],
+    "structural_path": {
+      "chapter": "Chương I",
+      "article": "Điều 2",
+      "clause": null,
+      "point": null
+    }
+  },
+  {
+    "parent_id": "3860e226663d57e8",
+    "source": "sample.pdf",
+    "page_start": 1,
+    "page_end": 2,
+    "article_key": "document_fallback",
+    "window_index": 1,
+    "child_ids": [
+      "sample:0004"
+    ],
+    "text": "Điều 10 của thông tư này nói về điều kiện khác.",
+    "char_count": 47,
+    "ambiguous_child_count": 1,
+    "warnings": [],
+    "structural_path": {
+      "chapter": null,
+      "article": null,
+      "clause": null,
+      "point": null
+    }
+  },
+  {
+    "parent_id": "63115709a5471a4b",
+    "source": "sample.pdf",
+    "page_start": 1,
+    "page_end": 2,
+    "article_key": "Điều 2",
+    "window_index": 1,
+    "child_ids": [
+      "sample:0005"
+    ],
+    "text": "Điều 2. Điều kiện vay vốn\n## Điều 3. Điều kiện khác",
+    "char_count": 51,
+    "ambiguous_child_count": 1,
+    "warnings": [],
+    "structural_path": {
+      "chapter": null,
+      "article": "Điều 2",
+      "clause": null,
+      "point": null
+    }
+  }
+]

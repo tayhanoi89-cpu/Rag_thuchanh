@@ -1,0 +1,63 @@
+[
+  {
+    "chunk_id": "sample:0001",
+    "strategy": "hierarchical",
+    "source": "sample.pdf",
+    "page_start": 1,
+    "page_end": 2,
+    "text": "# Chương I\n# Điều 1. Điều kiện cho vay xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "structure": {
+      "chapter": "Chương I",
+      "article": "Điều 1"
+    }
+  },
+  {
+    "chunk_id": "sample:0002",
+    "strategy": "hierarchical",
+    "source": "sample.pdf",
+    "page_start": 1,
+    "page_end": 2,
+    "text": "Điều 2. Điều kiện vay vốn yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "structure": {
+      "chapter": "Chương I"
+    }
+  },
+  {
+    "chunk_id": "sample:0003",
+    "strategy": "hierarchical",
+    "source": "sample.pdf",
+    "page_start": 1,
+    "page_end": 2,
+    "text": "Các điều kiện cho vay được quy định tại Điều 2.",
+    "structure": {}
+  },
+  {
+    "chunk_id": "sample:0004",
+    "strategy": "hierarchical",
+    "source": "sample.pdf",
+    "page_start": 1,
+    "page_end": 2,
+    "text": "Điều 10 của thông tư này nói về điều kiện khác.",
+    "structure": {}
+  },
+  {
+    "chunk_id": "sample:0005",
+    "strategy": "hierarchical",
+    "source": "sample.pdf",
+    "page_start": 1,
+    "page_end": 2,
+    "text": "Điều 2. Điều kiện vay vốn\n## Điều 3. Điều kiện khác",
+    "structure": {
+      "article": "Điều 2"
+    }
+  },
+  {
+    "chunk_id": "sample:0006",
+    "strategy": "hierarchical",
+    "source": "other.pdf",
+    "page_start": 3,
+    "page_end": 4,
+    "text": "Điều 4. Một quy định khác",
+    "structure": {}
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "question_id": "Q1",
+  "question": "Nghi dinh 46/2023/ND-CP thay the cho nghi dinh nao, va nghi dinh bi thay the do co noi dung gi noi bat ve kinh doanh bao hiem?",
+  "hops": 0,
+  "answer": "Khong tim thay thong tin trong ngu canh duoc cung cap.",
+  "stats": {
+    "direct_chunk_count": 5,
+    "hop_document_count": 0,
+    "hop_chunk_count": 0
+  }
+}

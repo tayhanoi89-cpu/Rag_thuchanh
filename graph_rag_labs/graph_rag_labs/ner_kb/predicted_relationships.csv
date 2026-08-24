@@ -1,0 +1,9 @@
+doc_id,other_doc_id,relationship,relationship_type,confidence,has_relation
+169221,164719,"Hai văn bản điều chỉnh hai lĩnh vực nghiệp vụ chuyên biệt khác nhau của Ngân hàng Nhà nước (quản lý dự trữ ngoại hối nhà nước và tỷ lệ an toàn vốn của tổ chức tín dụng) và không có quan hệ dẫn chiếu, sửa đổi hay thay thế lẫn nhau.",KHONG_CO,0.95,False
+164719,117310,"Văn bản A (Thông tư số 22/2023/TT-NHNN) sửa đổi, bổ sung một số điều của Văn bản B (Thông tư số 41/2016/TT-NHNN).",SUA_DOI_BO_SUNG,1.0,True
+173460,173695,"Cả hai Thông tư đều do Ngân hàng Nhà nước Việt Nam ban hành cùng ngày (24/12/2024) nhằm hướng dẫn Luật Các tổ chức tín dụng năm 2024 về hồ sơ, thủ tục cấp Giấy phép lần đầu cho các loại hình tổ chức tín dụng khác nhau (ngân hàng thương mại/chi nhánh nước ngoài và tổ chức tín dụng phi ngân hàng).",LIEN_QUAN,0.7,True
+169221,186482,"Hai văn bản điều chỉnh các lĩnh vực và đối tượng khác nhau (quản lý dự trữ ngoại hối và quản lý, giám sát an toàn hệ thống ngân hàng/cắt giảm điều kiện kinh doanh), không có quan hệ pháp lý trực tiếp.",KHONG_CO,0.9,False
+173460,174218,"Hai thông tư được ban hành độc lập bởi Ngân hàng Nhà nước Việt Nam, điều chỉnh hai thủ tục hành chính riêng biệt (cấp Giấy phép lần đầu và tổ chức lại tổ chức tín dụng) mà không có quan hệ sửa đổi, thay thế hay dẫn chiếu làm căn cứ của nhau.",KHONG_CO,0.9,False
+173695,6e689cd0-6f81-11f1-94d6-fd5d6d5ff793,"Văn bản B là Văn bản hợp nhất số 52/VBHN-NHNN được tạo ra từ việc hợp nhất Thông tư số 56/2024/TT-NHNN (Văn bản A) với các thông tư sửa đổi, bổ sung.",HOP_NHAT,0.98,True
+164719,186482,"Dữ liệu được cung cấp không cho thấy mối quan hệ viện dẫn, sửa đổi, bổ sung hoặc thay thế trực tiếp giữa hai thông tư này.",KHONG_CO,0.9,False
+112025,163441,Nghị định số 46/2023/NĐ-CP được ban hành để quy định chi tiết Luật Kinh doanh bảo hiểm năm 2022 và thay thế Nghị định số 73/2016/NĐ-CP quy định chi tiết Luật Kinh doanh bảo hiểm trước đó.,THAY_THE,0.95,True

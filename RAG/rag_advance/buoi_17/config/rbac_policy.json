@@ -1,0 +1,32 @@
+{
+  "policy_name": "Banking_Secure_RAG_RBAC_Policy",
+  "version": "1.0",
+  "default_decision": "DENY",
+  "valid_roles": [
+    "Admin",
+    "Risk_Officer",
+    "Employee",
+    "HR_Manager",
+    "Guest"
+  ],
+  "role_aliases": {
+    "HR": "HR_Manager",
+    "Risk_Manager": "Risk_Officer",
+    "Staff": "Employee"
+  },
+  "security_classes": {
+    "General": {
+      "description": "Tài liệu quy định và chính sách chung (Luật HTX, Nghị định quản lý, TT sửa đổi...)",
+      "allowed_roles": ["Admin", "Risk_Officer", "Employee", "HR_Manager", "Guest"]
+    },
+    "Risk": {
+      "description": "Tài liệu quy định nghiệp vụ rủi ro, tỷ lệ an toàn vốn CAR, quản lý kho quỹ tiền mặt",
+      "allowed_roles": ["Admin", "Risk_Officer", "Employee"]
+    }
+  },
+  "enforcement": {
+    "stage": "PRE_FILTERING",
+    "zero_leakage": true,
+    "audit_required": true
+  }
+}

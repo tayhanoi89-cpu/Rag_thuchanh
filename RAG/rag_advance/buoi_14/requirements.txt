@@ -1,0 +1,12 @@
+pandas
+rank-bm25
+sentence-transformers
+transformers
+neo4j
+python-dotenv
+streamlit
+datasets
+ragas
+openai
+langchain-openai
+langchain-huggingface

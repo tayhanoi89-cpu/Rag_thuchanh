@@ -212,7 +212,7 @@ def load_runtime_config() -> dict[str, Any]:
         raise ValueError("DEFAULT_TOP_K must be between 1 and 20")
 
     try:
-        rag_max_distance = float(os.getenv("RAG_MAX_DISTANCE", "0.45"))
+        rag_max_distance = float(os.getenv("RAG_MAX_DISTANCE", "0.6"))
     except ValueError as exc:
         raise ValueError("RAG_MAX_DISTANCE must be a float") from exc
     if rag_max_distance < 0:

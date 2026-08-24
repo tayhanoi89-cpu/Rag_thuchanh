@@ -1,0 +1,4 @@
+question_id,question,expected_chunk_id,query_type,note
+Q001,01/2014/TT-NHNN,44209__full,EXACT_KEYWORD,The source metadata and document heading contain this exact code.
+Q002,Quy định về việc vận chuyển tiền mặt trong ngân hàng là gì?,44209__full,SEMANTIC,The source title and cleaned content describe cash handling and transport.
+Q003,Thông tư 01/2014/TT-NHNN quy định việc kiểm kê tiền mặt như thế nào?,44209__full,MIXED,The query combines the verified document code with the subject described in the source.

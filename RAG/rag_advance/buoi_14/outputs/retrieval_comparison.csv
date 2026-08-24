@@ -1,0 +1,13 @@
+question_id,query_type,method,expected_chunk_id,top1_chunk_id,hit_at_1,hit_at_3,hit_at_5,mrr,reranker_mode
+Q001,EXACT_KEYWORD,bm25,44209__full,169221__full,0,1,1,0.3333333333333333,
+Q001,EXACT_KEYWORD,dense,44209__full,168220__full,0,1,1,0.3333333333333333,
+Q001,EXACT_KEYWORD,hybrid,44209__full,168220__full,0,1,1,0.3333333333333333,
+Q001,EXACT_KEYWORD,hybrid_rerank,44209__full,44209__full,1,1,1,1.0,NEURAL_CROSS_ENCODER
+Q002,SEMANTIC,bm25,44209__full,6e689cd0-6f81-11f1-94d6-fd5d6d5ff793__full,0,1,1,0.5,
+Q002,SEMANTIC,dense,44209__full,117310__full,0,1,1,0.3333333333333333,
+Q002,SEMANTIC,hybrid,44209__full,117310__full,0,1,1,0.3333333333333333,
+Q002,SEMANTIC,hybrid_rerank,44209__full,44209__full,1,1,1,1.0,NEURAL_CROSS_ENCODER
+Q003,MIXED,bm25,44209__full,44209__full,1,1,1,1.0,
+Q003,MIXED,dense,44209__full,117310__full,0,1,1,0.5,
+Q003,MIXED,hybrid,44209__full,44209__full,1,1,1,1.0,
+Q003,MIXED,hybrid_rerank,44209__full,44209__full,1,1,1,1.0,NEURAL_CROSS_ENCODER

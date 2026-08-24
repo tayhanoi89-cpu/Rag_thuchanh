@@ -1,0 +1,11 @@
+{
+  "question_id": "Q3",
+  "question": "Thong tu so 01/2025/TT-NHNN quy dinh ve cap giay phep quy tin dung nhan dan duoc sua doi, bo sung boi van ban nao, va nhung noi dung sua doi bo sung chinh la gi?",
+  "hops": 0,
+  "answer": "Khong tim thay thong tin trong ngu canh duoc cung cap.",
+  "stats": {
+    "direct_chunk_count": 5,
+    "hop_document_count": 0,
+    "hop_chunk_count": 0
+  }
+}

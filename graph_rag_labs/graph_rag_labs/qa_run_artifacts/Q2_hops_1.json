@@ -1,0 +1,11 @@
+{
+  "question_id": "Q2",
+  "question": "Van ban hop nhat so 52/VBHN-NHNN duoc hop nhat tu van ban nao, va quy dinh ve ho so, thu tuc cap giay phep lan dau cua ngan hang thuong mai gom nhung tai lieu gi?",
+  "hops": 1,
+  "answer": "Khong tim thay thong tin trong ngu canh duoc cung cap.",
+  "stats": {
+    "direct_chunk_count": 5,
+    "hop_document_count": 3,
+    "hop_chunk_count": 6
+  }
+}

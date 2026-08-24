@@ -1,0 +1,8 @@
+# Security & Key files
+*.key
+*.pem
+*.env
+__pycache__/
+*.pyc
+.venv/
+cache/

@@ -1,0 +1,304 @@
+{
+  "generated_at": "2026-08-08T12:07:39Z",
+  "runtime_config": {
+    "MULTI_QUERY_COUNT": 3,
+    "MULTI_QUERY_MAX_CHARS": 300,
+    "MULTI_QUERY_TEMPERATURE": 0.2,
+    "MULTI_QUERY_ORIGINAL_WEIGHT": 1.5,
+    "MULTI_QUERY_VARIANT_WEIGHT": 1.0,
+    "MULTI_QUERY_RRF_K": 60,
+    "PER_QUERY_CANDIDATES": 12,
+    "PARENT_MAX_CHARS": 6000,
+    "PARENT_SCORE_CHILD_LIMIT": 3,
+    "PARENT_RRF_K": 60,
+    "PARENT_CANDIDATES": 10,
+    "FINAL_PARENT_TOP_K": 3,
+    "TOTAL_CONTEXT_MAX_CHARS": 16000
+  },
+  "store_dir": "C:\\Users\\ngocngothi\\Desktop\\Rag_thuchanh\\RAG\\rag_advance\\buoi_09\\storage\\hierarchy",
+  "input_path": "C:\\Users\\ngocngothi\\Desktop\\Rag_thuchanh\\RAG\\rag_advance\\buoi_09\\tests\\fixtures\\hierarchical_sample.json",
+  "summary": {
+    "evaluated_questions": 4,
+    "total_questions": 1,
+    "skipped_questions": 0,
+    "needs_human_review": 1,
+    "compare_mode": true,
+    "mode": "multi_parent"
+  },
+  "questions": [
+    {
+      "question_id": "Q01",
+      "question": "Điều kiện vay vốn và những nhu cầu vốn không được cho vay được quy định thế nào?",
+      "mode": "single_flat",
+      "status": "ready",
+      "child_count": 0,
+      "parent_count": 0,
+      "child_ids": [],
+      "parent_ids": [],
+      "relevant_child_ids": [],
+      "relevant_parent_ids": [],
+      "needs_human_review": true,
+      "child_metrics": {
+        "recall_at_1": null,
+        "precision_at_1": 0.0,
+        "recall_at_3": null,
+        "precision_at_3": 0.0,
+        "recall_at_5": null,
+        "precision_at_5": 0.0
+      },
+      "parent_metrics": {
+        "recall_at_1": null,
+        "precision_at_1": 0.0,
+        "recall_at_3": null,
+        "precision_at_3": 0.0,
+        "recall_at_5": null,
+        "precision_at_5": 0.0
+      },
+      "errors": null
+    },
+    {
+      "question_id": "Q01",
+      "question": "Điều kiện vay vốn và những nhu cầu vốn không được cho vay được quy định thế nào?",
+      "mode": "multi_flat",
+      "status": "ready",
+      "child_count": 0,
+      "parent_count": 0,
+      "child_ids": [],
+      "parent_ids": [],
+      "relevant_child_ids": [],
+      "relevant_parent_ids": [],
+      "needs_human_review": true,
+      "child_metrics": {
+        "recall_at_1": null,
+        "precision_at_1": 0.0,
+        "recall_at_3": null,
+        "precision_at_3": 0.0,
+        "recall_at_5": null,
+        "precision_at_5": 0.0
+      },
+      "parent_metrics": {
+        "recall_at_1": null,
+        "precision_at_1": 0.0,
+        "recall_at_3": null,
+        "precision_at_3": 0.0,
+        "recall_at_5": null,
+        "precision_at_5": 0.0
+      },
+      "errors": null
+    },
+    {
+      "question_id": "Q01",
+      "question": "Điều kiện vay vốn và những nhu cầu vốn không được cho vay được quy định thế nào?",
+      "mode": "single_parent",
+      "status": "hierarchy_not_ready",
+      "child_count": 0,
+      "parent_count": 0,
+      "child_ids": [],
+      "parent_ids": [],
+      "relevant_child_ids": [],
+      "relevant_parent_ids": [],
+      "needs_human_review": true,
+      "child_metrics": {
+        "recall_at_1": null,
+        "precision_at_1": 0.0,
+        "recall_at_3": null,
+        "precision_at_3": 0.0,
+        "recall_at_5": null,
+        "precision_at_5": 0.0
+      },
+      "parent_metrics": {
+        "recall_at_1": null,
+        "precision_at_1": 0.0,
+        "recall_at_3": null,
+        "precision_at_3": 0.0,
+        "recall_at_5": null,
+        "precision_at_5": 0.0
+      },
+      "errors": null
+    },
+    {
+      "question_id": "Q01",
+      "question": "Điều kiện vay vốn và những nhu cầu vốn không được cho vay được quy định thế nào?",
+      "mode": "multi_parent",
+      "status": "hierarchy_not_ready",
+      "child_count": 0,
+      "parent_count": 0,
+      "child_ids": [],
+      "parent_ids": [],
+      "relevant_child_ids": [],
+      "relevant_parent_ids": [],
+      "needs_human_review": true,
+      "child_metrics": {
+        "recall_at_1": null,
+        "precision_at_1": 0.0,
+        "recall_at_3": null,
+        "precision_at_3": 0.0,
+        "recall_at_5": null,
+        "precision_at_5": 0.0
+      },
+      "parent_metrics": {
+        "recall_at_1": null,
+        "precision_at_1": 0.0,
+        "recall_at_3": null,
+        "precision_at_3": 0.0,
+        "recall_at_5": null,
+        "precision_at_5": 0.0
+      },
+      "errors": null
+    }
+  ],
+  "mode_results": {
+    "Q01": {
+      "status": "ready",
+      "mode_results": {
+        "single_flat": {
+          "status": "ready",
+          "mode": "single_flat",
+          "original_question": "Điều kiện vay vốn và những nhu cầu vốn không được cho vay được quy định thế nào?",
+          "query_set": {
+            "original_question": "Điều kiện vay vốn và những nhu cầu vốn không được cho vay được quy định thế nào?",
+            "queries": [
+              {
+                "query_id": "Q0",
+                "text": "Điều kiện vay vốn và những nhu cầu vốn không được cho vay được quy định thế nào?",
+                "origin": "original",
+                "focus": "original_intent"
+              }
+            ],
+            "model": "gemini-3.5-flash-lite",
+            "generation_latency_ms": 0.0,
+            "status": "ready"
+          },
+          "child_hits": [],
+          "parent_candidates": [],
+          "accepted_evidence": [],
+          "trace": {
+            "generation_api_call_count": 0,
+            "answer_generation_call_count": 0,
+            "reranker_call_count": 0,
+            "child_count": 0,
+            "parent_count": 0
+          }
+        },
+        "multi_flat": {
+          "status": "ready",
+          "mode": "multi_flat",
+          "original_question": "Điều kiện vay vốn và những nhu cầu vốn không được cho vay được quy định thế nào?",
+          "query_set": {
+            "original_question": "Điều kiện vay vốn và những nhu cầu vốn không được cho vay được quy định thế nào?",
+            "queries": [
+              {
+                "query_id": "Q0",
+                "text": "Điều kiện vay vốn và những nhu cầu vốn không được cho vay được quy định thế nào?",
+                "origin": "original",
+                "focus": "original_intent"
+              },
+              {
+                "query_id": "Q1",
+                "text": "Điều kiện vay vốn và những nhu cầu vốn không được cho vay được quy định thế nào? theo quy định",
+                "origin": "generated",
+                "focus": "paraphrase"
+              },
+              {
+                "query_id": "Q2",
+                "text": "Điều kiện vay vốn và những nhu cầu vốn không được cho vay được quy định thế nào? trong pháp luật",
+                "origin": "generated",
+                "focus": "paraphrase"
+              }
+            ],
+            "model": "gemini-3.5-flash-lite",
+            "generation_latency_ms": 0.013,
+            "status": "ready",
+            "dropped_duplicate_count": 1,
+            "cache_hit": false
+          },
+          "child_hits": [],
+          "parent_candidates": [],
+          "accepted_evidence": [],
+          "trace": {
+            "generation_api_call_count": 1,
+            "answer_generation_call_count": 0,
+            "reranker_call_count": 0,
+            "child_count": 0,
+            "parent_count": 0
+          }
+        },
+        "single_parent": {
+          "status": "hierarchy_not_ready",
+          "mode": "single_parent",
+          "original_question": "Điều kiện vay vốn và những nhu cầu vốn không được cho vay được quy định thế nào?",
+          "query_set": {
+            "original_question": "Điều kiện vay vốn và những nhu cầu vốn không được cho vay được quy định thế nào?",
+            "queries": [
+              {
+                "query_id": "Q0",
+                "text": "Điều kiện vay vốn và những nhu cầu vốn không được cho vay được quy định thế nào?",
+                "origin": "original",
+                "focus": "original_intent"
+              }
+            ],
+            "model": "gemini-3.5-flash-lite",
+            "generation_latency_ms": 0.0,
+            "status": "ready"
+          },
+          "child_hits": [],
+          "parent_candidates": [],
+          "accepted_evidence": [],
+          "trace": {
+            "generation_api_call_count": 0,
+            "answer_generation_call_count": 0,
+            "reranker_call_count": 0
+          },
+          "errors": []
+        },
+        "multi_parent": {
+          "status": "hierarchy_not_ready",
+          "mode": "multi_parent",
+          "original_question": "Điều kiện vay vốn và những nhu cầu vốn không được cho vay được quy định thế nào?",
+          "query_set": {
+            "original_question": "Điều kiện vay vốn và những nhu cầu vốn không được cho vay được quy định thế nào?",
+            "queries": [
+              {
+                "query_id": "Q0",
+                "text": "Điều kiện vay vốn và những nhu cầu vốn không được cho vay được quy định thế nào?",
+                "origin": "original",
+                "focus": "original_intent"
+              },
+              {
+                "query_id": "Q1",
+                "text": "Điều kiện vay vốn và những nhu cầu vốn không được cho vay được quy định thế nào? theo quy định",
+                "origin": "generated",
+                "focus": "paraphrase"
+              },
+              {
+                "query_id": "Q2",
+                "text": "Điều kiện vay vốn và những nhu cầu vốn không được cho vay được quy định thế nào? trong pháp luật",
+                "origin": "generated",
+                "focus": "paraphrase"
+              }
+            ],
+            "model": "gemini-3.5-flash-lite",
+            "generation_latency_ms": 0.013,
+            "status": "ready",
+            "dropped_duplicate_count": 1,
+            "cache_hit": true
+          },
+          "child_hits": [],
+          "parent_candidates": [],
+          "accepted_evidence": [],
+          "trace": {
+            "generation_api_call_count": 0,
+            "answer_generation_call_count": 0,
+            "reranker_call_count": 0
+          },
+          "errors": []
+        }
+      },
+      "trace": {
+        "generation_api_call_count": 1,
+        "answer_generation_call_count": 0,
+        "reranker_call_count": 0
+      }
+    }
+  }
+}

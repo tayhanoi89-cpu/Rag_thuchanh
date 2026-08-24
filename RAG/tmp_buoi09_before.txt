@@ -1,0 +1,14 @@
+﻿C:\Users\ngocngothi\Desktop\Rag_thuchanh\RAG\rag_advance\buoi_09\.env
+C:\Users\ngocngothi\Desktop\Rag_thuchanh\RAG\rag_advance\buoi_09\.env.example
+C:\Users\ngocngothi\Desktop\Rag_thuchanh\RAG\rag_advance\buoi_09\.gitignore
+C:\Users\ngocngothi\Desktop\Rag_thuchanh\RAG\rag_advance\buoi_09\advanced_rag.py
+C:\Users\ngocngothi\Desktop\Rag_thuchanh\RAG\rag_advance\buoi_09\app.py
+C:\Users\ngocngothi\Desktop\Rag_thuchanh\RAG\rag_advance\buoi_09\evaluate.py
+C:\Users\ngocngothi\Desktop\Rag_thuchanh\RAG\rag_advance\buoi_09\hierarchical_rag.py
+C:\Users\ngocngothi\Desktop\Rag_thuchanh\RAG\rag_advance\buoi_09\rag.py
+C:\Users\ngocngothi\Desktop\Rag_thuchanh\RAG\rag_advance\buoi_09\README.md
+C:\Users\ngocngothi\Desktop\Rag_thuchanh\RAG\rag_advance\buoi_09\requirements.txt
+C:\Users\ngocngothi\Desktop\Rag_thuchanh\RAG\rag_advance\buoi_09\SPEC_buoi_09.md
+C:\Users\ngocngothi\Desktop\Rag_thuchanh\RAG\rag_advance\buoi_09\eval\questions.json
+C:\Users\ngocngothi\Desktop\Rag_thuchanh\RAG\rag_advance\buoi_09\tests\__init__.py
+C:\Users\ngocngothi\Desktop\Rag_thuchanh\RAG\rag_advance\buoi_09\tests\fixtures\hierarchical_sample.json
