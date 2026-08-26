@@ -1,0 +1,38 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: agribank-ollama-server
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+    networks:
+      - agribank-ai-network
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: agribank-ai-app
+    ports:
+      - "8501:8501"
+    environment:
+      - LLM_PROVIDER=ollama
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - OLLAMA_MODEL=qwen3:0.6b
+      - APP_ENV=training
+    depends_on:
+      - ollama
+    restart: unless-stopped
+    networks:
+      - agribank-ai-network
+
+volumes:
+  ollama_data:
+    name: agribank_ollama_data
+
+networks:
+  agribank-ai-network:
+    name: agribank-ai-network
+    driver: bridge
