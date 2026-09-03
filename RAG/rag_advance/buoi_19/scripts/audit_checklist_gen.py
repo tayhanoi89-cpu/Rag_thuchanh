@@ -43,6 +43,9 @@ class AuditChecklistGeneratorEngine:
         self,
         data_internal_path=None,
         data_combined_path=None,
+        provider=None,
+        model=None,
+        base_url=None,
     ):
         self.root_dir = PROJECT_ROOT
         self.data_internal_path = data_internal_path or self._resolve_path("data/agribank_internal_policies.csv")
@@ -50,11 +53,22 @@ class AuditChecklistGeneratorEngine:
         self.audit_logger = AuditLogger()
         self.df_internal = None
         self.df_combined = None
-        self.provider = LLM_PROVIDER
+        self.provider = (provider or LLM_PROVIDER).lower().strip()
+        self.custom_model = model
+        self.custom_base_url = base_url
         self.gemini_client = None
         self.ollama_client = None
 
         self._init_data()
+        self._init_llm()
+
+    def set_provider(self, provider: str, model: str = None, base_url: str = None):
+        """Dynamically update LLM provider and re-initialize client."""
+        self.provider = provider.lower().strip()
+        if model:
+            self.custom_model = model
+        if base_url:
+            self.custom_base_url = base_url
         self._init_llm()
 
     def _resolve_path(self, rel_path: str) -> str:
@@ -80,7 +94,7 @@ class AuditChecklistGeneratorEngine:
     def _init_llm(self):
         print(f"[Engine Config] Active LLM Provider: {self.provider.upper()}")
         if self.provider == "ollama":
-            self.ollama_client = OllamaClient()
+            self.ollama_client = OllamaClient(base_url=self.custom_base_url, model=self.custom_model)
             health = self.ollama_client.check_health()
             status_str = "ONLINE" if health["online"] else "OFFLINE (Rule-Engine Fallback Active)"
             print(f"[Ollama Adapter] Base URL: {self.ollama_client.base_url}, Target Model: {self.ollama_client.model}, Status: {status_str}")
@@ -89,7 +103,7 @@ class AuditChecklistGeneratorEngine:
                 try:
                     from google import genai
                     self.gemini_client = genai.Client(api_key=GEMINI_API_KEY)
-                    print(f"[Gemini Client] Initialized successfully with model: {LLM_MODEL}")
+                    print(f"[Gemini Client] Initialized successfully with model: {self.custom_model or LLM_MODEL}")
                 except Exception as e:
                     print(f"[Warning] Cannot initialize google.genai: {e}")
                     self.gemini_client = None
@@ -151,14 +165,16 @@ class AuditChecklistGeneratorEngine:
 
     def generate_checklist(
         self,
-        domain: str,
-        unit: str,
+        domain: str = "An toàn kho quỹ & Vận chuyển tiền mặt",
+        unit: str = "Chi nhánh cấp 1 & PGD",
         user_role: str = "Risk_Manager",
         user_id: str = "auditor_01",
+        chunks: list = None,
     ) -> list:
         """Generate audit checklist items using LLM (Ollama / Gemini)."""
         request_id = str(uuid.uuid4())[:8]
-        chunks = self.retrieve_relevant_chunks(domain, unit, user_role)
+        if not chunks:
+            chunks = self.retrieve_relevant_chunks(domain, unit, user_role)
 
         if not chunks:
             self.audit_logger.log_action(

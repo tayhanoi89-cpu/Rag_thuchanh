@@ -1,9 +1,9 @@
 # BÀI THỰC HÀNH BUỔI 19
-# Đóng gói Local AI System với Docker, Ollama (Model Qwen3:0.6B) & Streamlit Dashboard
+# Đóng gói Toàn diện Local AI System với Docker, Ollama (Model Qwen3:0.6B) & Streamlit Dashboard 4-in-1
 
 ## Mục tiêu
 
-Buổi 19 tập trung vào việc chuyển đổi toàn bộ kiến trúc RAG Bảo mật & Kiểm toán Ngân hàng Agribank (từ Buổi 17 & 18) từ việc sử dụng Cloud Gemini API sang **Mô hình Local AI hoàn toàn Offline**, bảo mật dữ liệu tuyệt đối (On-Premise) sử dụng **Ollama** và **Model Qwen3:0.6B** (hoặc Qwen2.5-0.5B / Qwen2.5-1.5B), đồng thời đóng gói toàn bộ hệ thống bằng **Docker Containerization**.
+Buổi 19 tập trung vào việc chuyển đổi toàn bộ kiến trúc RAG Bảo mật & Kiểm toán Ngân hàng Agribank (kế thừa từ Buổi 17 & 18) từ việc sử dụng Cloud Gemini API sang **Mô hình Local AI hoàn toàn Offline**, bảo mật dữ liệu tuyệt đối (On-Premise) sử dụng **Ollama** và **Model Qwen3:0.6B** (hoặc Qwen2.5-0.5B / Qwen2.5-1.5B), đồng thời đóng gói toàn bộ hệ thống bằng **Docker Containerization**.
 
 ```text
 Hạ tầng Cloud Gemini API (Buổi 17/18) 
@@ -11,77 +11,111 @@ Hạ tầng Cloud Gemini API (Buổi 17/18)
 Local SLM Model (Qwen3:0.6B) + Ollama Container + Streamlit App Container (Docker Compose)
 ```
 
-Sản phẩm cuối buổi:
+Sản phẩm cuối buổi bao gồm đầy đủ **4 Use Cases Nghiệp vụ Ngân hàng**:
 
 ```text
 Hệ thống Local AI Containerized bao gồm:
 + Ollama Service Container (Chạy local model Qwen3:0.6b trên port 11434)
 + Agribank AI Web Application Container (Streamlit App + Core RAG Engines trên port 8501)
 + Ollama API Adapter (scripts/ollama_adapter.py) hỗ trợ Dual-Provider Switch (Ollama / Gemini)
-+ Nâng cấp UC3 (Compliance Checker) & UC4 (Audit Checklist Gen) tương thích Local Model
++ Vận hành trọn bộ 4 Core AI Engines:
+  - UC1: AI Tra cứu Quy định Nội bộ có phân quyền RBAC (scripts/internal_lookup.py)
+  - UC2: AI Đánh giá Khoảng cách Tuân thủ - Compliance Gap (scripts/compliance_gap.py)
+  - UC3: AI So sánh chéo & Phát hiện Mâu thuẫn Quy định (scripts/compliance_checker.py)
+  - UC4: AI Tự động Sinh Checklist Kiểm toán Tuân thủ (scripts/audit_checklist_gen.py)
 + Bộ Docker Configuration: Dockerfile, docker-compose.yml, requirements.txt
 + Kịch bản nghiệm thu Docker & Security Verification (outputs/b19_docker_acceptance_report.md)
 ```
 
 ---
 
-# 1. Kiến trúc Hệ thống Docker & Local AI
+# 1. Bảng Tổng Hợp 4 Use Cases Nghiệp Vụ
+
+| Use Case | Tên Chức Năng | File Engine | Đầu Vào | Cơ Chế Bảo Vệ / Guardrail | Đầu Ra |
+|---|---|---|---|---|---|
+| **UC1** | **Tra cứu Quy định Nội bộ** | `scripts/internal_lookup.py` | Câu hỏi tra cứu nghiệp vụ, Role người dùng | **Pre-retrieval RBAC Filter**: Chỉ đưa chunks được cấp quyền vào context | Câu trả lời kèm Citation chính xác, chặn rò rỉ dữ liệu mật |
+| **UC2** | **Đánh giá Khoảng cách Tuân thủ** | `scripts/compliance_gap.py` | Yêu cầu pháp lý từ Thông tư NHNN | **Evidence Cross-Match**: So sánh bằng chứng 2 phía | Phân loại `DAP_UNG`, `THIEU`, `CHENH_LECH` + `NEEDS_HUMAN_REVIEW` |
+| **UC3** | **Phát hiện Xung đột Quy định** | `scripts/compliance_checker.py` | Cặp điều khoản (Nội bộ vs NHNN / Nội bộ vs Nội bộ) | **Conflict Severity Assessment**: Ép kiểu JSON phân tích mức độ | Mã xung đột, mức độ rủi ro (HIGH/MED/LOW), đề xuất chỉnh sửa |
+| **UC4** | **Sinh Checklist Kiểm toán** | `scripts/audit_checklist_gen.py` | Miền nghiệp vụ & Gói tài liệu quy định | **Auditor Structured Guide**: Trích xuất thủ tục kiểm tra thực tế | Bảng danh mục câu hỏi & thủ tục kiểm toán hiện trường |
+
+---
+
+# 2. Kiến trúc Hệ thống Docker & Local AI
 
 ```mermaid
 graph TD
-    User["👨‍💼 User / Kiểm toán viên (Browser: http://localhost:8501)"] --> AppContainer["🐳 Container: agribank-ai-app (Streamlit + RAG Engines)"]
+    User["👨‍💼 User / Kiểm toán viên (Browser: http://localhost:8501)"] --> AppContainer["🐳 Container: agribank-ai-app (Streamlit + 4 Core Engines)"]
     
     subgraph "Docker Network: agribank-ai-network"
         AppContainer --> InternalData["📊 Local CSV Data (data/agribank_internal_policies.csv)"]
         AppContainer --> SecureRetriever["🔒 Secure Retrieval Adapter (RBAC Filter)"]
-        AppContainer --> OllamaAdapter["🔌 Ollama Adapter (scripts/ollama_adapter.py)"]
+        
+        subgraph "4 Core Engines (Local / Dual-Provider)"
+            SecureRetriever --> UC1["🔍 UC1: Internal Lookup (RBAC)"]
+            SecureRetriever --> UC2["⚖️ UC2: Compliance Gap Checker"]
+            SecureRetriever --> UC3["⚔️ UC3: Compliance Conflict Checker"]
+            SecureRetriever --> UC4["📋 UC4: Audit Checklist Generator"]
+        end
+        
+        UC1 --> OllamaAdapter["🔌 Ollama Adapter (scripts/ollama_adapter.py)"]
+        UC2 --> OllamaAdapter
+        UC3 --> OllamaAdapter
+        UC4 --> OllamaAdapter
+        
         OllamaAdapter -- "HTTP REST API (http://ollama:11434/api/generate)" --> OllamaContainer["🐳 Container: agribank-ollama-server (Ollama Engine)"]
         OllamaContainer --> LocalModel["🧠 Local SLM Model (qwen3:0.6b / qwen2.5:0.5b)"]
     end
+    
+    AppContainer --> AuditLog["📜 Audit Trail Logger (outputs/audit_trail.jsonl)"]
 ```
 
 ---
 
-# 2. Nguyên tắc bắt buộc
+# 3. Nguyên tắc bắt buộc
 
-- **Hoàn toàn Offline & Bảo mật:** Dữ liệu quy định nội bộ và prompt tra cứu không được rời khỏi môi trường mạng cục bộ.
+- **Hoàn toàn Offline & Bảo mật:** Dữ liệu quy định nội bộ và prompt tra cứu không được rời khỏi môi trường mạng cục bộ khi chạy chế độ `ollama`.
 - **Không sửa dữ liệu nguồn:** Giữ nguyên các tệp `data/agribank_internal_policies.csv` và `data/chunks_combined_secure.csv`.
-- **Chuyển đổi linh hoạt (Dual Provider):** Hệ thống phải hỗ trợ biến môi trường `LLM_PROVIDER` (`ollama` hoặc `gemini`) trong `.env` để dễ dàng switch giữa Cloud API và Local Ollama.
-- **Trích dẫn chính xác & Human Review:** 100% kết quả mâu thuẫn hay checklist từ Ollama phải gắn `citation` chuẩn xác và cờ `NEEDS_HUMAN_REVIEW`.
+- **Chuyển đổi linh hoạt (Dual Provider):** Cả 4 engines phải hỗ trợ biến môi trường `LLM_PROVIDER` (`ollama` hoặc `gemini`) trong `.env` để dễ dàng switch giữa Cloud API và Local Ollama.
+- **RBAC Pre-retrieval Enforced:** Tài liệu không thuộc quyền hạn của vai trò người dùng (ví dụ: `Staff` truy cập dữ liệu mật CAR/Risk của `Risk_Manager`) phải bị chặn từ tầng truy xuất, không đưa vào context của LLM.
+- **Trích dẫn chính xác & Human Review:** 100% kết quả từ 4 Use Cases phải đính kèm `citation` chuẩn xác và cờ `NEEDS_HUMAN_REVIEW`.
 - **Đóng gói Chuẩn Docker:** Chạy toàn bộ hệ thống chỉ với một lệnh duy nhất `docker compose up -d`.
 
 ---
 
-# 3. Cấu trúc project Buổi 19
+# 4. Cấu trúc project Buổi 19
 
 ```text
-buoi_17/ (hoặc buoi_19/)
+buoi_19/
 ├── .env                              # Khai báo LLM_PROVIDER=ollama, OLLAMA_BASE_URL, OLLAMA_MODEL
 ├── Dockerfile                        # Dockerfile đóng gói ứng dụng Streamlit & RAG Engines
 ├── docker-compose.yml                # Docker Compose orchestrate Ollama & App containers
 ├── requirements.txt                  # Python dependencies cho Container
-├── README.md
+├── README.md                         # Hướng dẫn khởi chạy & vận hành
+├── Buoi_19.md                        # Tài liệu hướng dẫn & Prompt thực hành chi tiết
 ├── data/
-│   ├── agribank_internal_policies.csv
-│   └── chunks_combined_secure.csv
+│   ├── agribank_internal_policies.csv # 24 quy định nội bộ Agribank
+│   └── chunks_combined_secure.csv    # 811 chunks quy định pháp luật & nội bộ
 ├── scripts/
-│   ├── ollama_adapter.py             # Ollama REST API Adapter Client
-│   ├── compliance_checker.py        # Core Engine UC3 (hỗ trợ Ollama / Gemini)
-│   ├── audit_checklist_gen.py       # Core Engine UC4 (hỗ trợ Ollama / Gemini)
-│   ├── secure_retrieval_adapter.py
-│   ├── audit_logger.py
-│   └── verify_b19_docker.py          # Kịch bản nghiệm thu Docker & Local Model Buổi 19
+│   ├── ollama_adapter.py             # Ollama REST API Adapter Client (Offline SLM)
+│   ├── internal_lookup.py            # Core Engine UC1: Tra cứu quy định nội bộ (RBAC Filter)
+│   ├── compliance_gap.py             # Core Engine UC2: Đánh giá khoảng cách tuân thủ
+│   ├── compliance_checker.py        # Core Engine UC3: So sánh chéo & phát hiện xung đột
+│   ├── audit_checklist_gen.py       # Core Engine UC4: Tự động sinh checklist kiểm toán
+│   ├── secure_retrieval_adapter.py  # Bộ lọc phân quyền RBAC tiền truy xuất
+│   ├── audit_logger.py              # Ghi vết kiểm toán bảo mật (Audit Trail)
+│   ├── security_tests_b19.py        # Bộ 6 bài kiểm thử an ninh & bảo mật
+│   └── verify_b19_docker.py          # Kịch bản nghiệm thu Docker & 4 Use Cases Buổi 19
 ├── outputs/
-│   ├── b19_docker_acceptance_report.md
+│   ├── b19_docker_acceptance_report.md # Báo cáo nghiệm thu tự động
 │   ├── compliance_conflicts.csv
 │   ├── audit_checklist_results.csv
-│   └── audit_log.jsonl
-└── app.py                           # Web UI Streamlit tương thích Local Model & Docker
+│   └── audit_trail.jsonl             # File log truy vết hệ thống
+└── app.py                           # Web UI Streamlit 5-in-1 (UC1, UC2, UC3, UC4, Audit Trail)
 ```
 
 ---
 
-# 4. Tệp cấu hình `.env` cho Buổi 19
+# 5. Tệp cấu hình `.env` cho Buổi 19
 
 ```env
 # Buổi 19 Local Ollama & Docker Setup
@@ -99,11 +133,11 @@ APP_ENV=training
 
 ---
 
-# 5. Các Prompt Thực Hành Buổi 19
+# 6. Các Prompt Thực Hành Buổi 19
 
 ---
 
-# PROMPT SETUP — Kiểm tra Môi trường Docker & Ollama
+### PROMPT SETUP — Kiểm tra Môi trường Docker, Ollama & Dữ liệu
 
 ```text
 Kiểm tra giúp tôi môi trường Docker và các tệp dữ liệu Buổi 19.
@@ -122,7 +156,7 @@ ENV CONFIG READY: YES / NO
 
 ---
 
-# PROMPT 1 — Xây dựng Ollama API Adapter Client (`scripts/ollama_adapter.py`)
+### PROMPT 1 — Xây dựng Ollama API Adapter Client (`scripts/ollama_adapter.py`)
 
 ```text
 Tạo file:
@@ -132,7 +166,7 @@ Yêu cầu:
 1. Xây dựng lớp `OllamaClient` giao tiếp trực tiếp với Ollama REST API (`/api/generate` và `/api/tags`).
 2. Tự động đọc đường dẫn OLLAMA_BASE_URL (mặc định http://localhost:11434 hoặc http://ollama:11434) và OLLAMA_MODEL (mặc định qwen3:0.6b).
 3. Cung cấp hàm `check_health()` để kiểm tra Ollama Server online/offline và danh sách models đã tải.
-4. Cung cấp hàm `generate(prompt, format_json=False, temperature=0.2)` gửi prompt và nhận văn bản / JSON từ mô hình Qwen3:0.6b.
+4. Cung cấp hàm `generate(prompt, system="", format_json=False, temperature=0.2)` gửi prompt và nhận văn bản / JSON từ mô hình Qwen3:0.6b.
 5. Hỗ trợ fallback an toàn dạng rule-engine khi Ollama Server chưa bật.
 
 Chạy kiểm tra thử nghiệm module:
@@ -145,36 +179,48 @@ OLLAMA SERVER ONLINE: YES / NO
 
 ---
 
-# PROMPT 2 — Cập nhật Core Engines (UC3 & UC4) Tương thích Local Model
+### PROMPT 2 — Nâng cấp Cả 4 Core Engines Tương thích Local Model (`scripts/`)
 
 ```text
-Cập nhật các file backend trong scripts/:
-1. scripts/compliance_checker.py (UC3)
-2. scripts/audit_checklist_gen.py (UC4)
-3. scripts/internal_lookup.py (UC1)
-4. scripts/compliance_gap.py (UC2)
+Cập nhật toàn bộ 4 file backend engines trong scripts/ hỗ trợ Dual-Provider (Ollama Local SLM / Gemini Cloud):
 
-Yêu cầu:
-1. Đọc biến môi trường LLM_PROVIDER từ .env.
-2. Nếu LLM_PROVIDER == "ollama", khởi tạo OllamaClient và gửi prompt sang Local Model Qwen3:0.6b.
-3. Nếu LLM_PROVIDER == "gemini", duy trì kết nối với Gemini Client.
-4. Đảm bảo cấu trúc prompt ép kiểu định dạng JSON chuẩn xác cho cả 2 Use Cases.
-5. 100% kết quả sinh ra giữ nguyên cờ review_status = "NEEDS_HUMAN_REVIEW" và đính kèm đầy đủ Citation văn bản gốc.
+1. scripts/internal_lookup.py (UC1 - Tra cứu Quy định Nội bộ có RBAC Pre-filtering)
+   - Lọc chunks theo `allowed_roles` trước khi gửi vào LLM context;
+   - Nếu không có quyền hoặc không tìm thấy thông tin, trả đúng câu chuẩn: "Không tìm thấy đủ thông tin trong phạm vi tài liệu được phép truy cập."
+   - Đính kèm Citation văn bản gốc và ghi Audit Log.
 
-Chạy thử nghiệm kiểm tra 2 engine ở chế độ Ollama:
+2. scripts/compliance_gap.py (UC2 - Đánh giá Khoảng cách Tuân thủ)
+   - So sánh yêu cầu từ Thông tư NHNN với quy định nội bộ Agribank;
+   - Phân loại: DAP_UNG / THIEU / CHENH_LECH / CHUA_DU_BANG_CHUNG.
+   - Gắn cờ review_status = "NEEDS_HUMAN_REVIEW".
+
+3. scripts/compliance_checker.py (UC3 - Phát hiện Xung đột & Mâu thuẫn Quy định)
+   - Đối chiếu chéo các cặp điều khoản, đánh giá mức độ xung đột (HIGH/MEDIUM/LOW/NONE);
+   - Đề xuất giải pháp sửa đổi điều khoản nội bộ.
+
+4. scripts/audit_checklist_gen.py (UC4 - Tự động Sinh Checklist Kiểm toán)
+   - Phân tích các gói tài liệu quy định và sinh danh mục câu hỏi / thủ tục kiểm tra hiện trường.
+
+Yêu cầu chung:
+- Tất cả các engine đều có phương thức `set_provider(provider, model, base_url)` để chuyển đổi linh hoạt.
+- 100% kết quả có Citation và cờ `NEEDS_HUMAN_REVIEW`.
+
+Chạy thử nghiệm kiểm tra 4 engines:
+python scripts/internal_lookup.py
+python scripts/compliance_gap.py
 python scripts/compliance_checker.py
 python scripts/audit_checklist_gen.py
 ```
 
 ---
 
-# PROMPT 3 — Xây dựng Docker Containerization Setup
+### PROMPT 3 — Xây dựng Docker Containerization & Streamlit App 5-in-1
 
 ```text
-Tạo các tệp đóng gói Docker cho dự án:
+Tạo các tệp đóng gói Docker và hoàn thiện giao diện Web Streamlit cho toàn bộ 4 Use Cases:
 
 1. requirements.txt:
-   Liệt kê đầy đủ thư viện: streamlit, pandas, requests, python-dotenv, google-genai.
+   Liệt kê đầy đủ: streamlit, pandas, requests, python-dotenv, google-genai.
 
 2. Dockerfile:
    - Base image: python:3.10-slim.
@@ -186,15 +232,24 @@ Tạo các tệp đóng gói Docker cho dự án:
 
 3. docker-compose.yml:
    - Service 1: `ollama` (image: ollama/ollama:latest, ports 11434:11434, volume ollama_data).
-   - Service 2: `app` (build từ Dockerfile hiện tại, ports 8501:8501, environment LLM_PROVIDER=ollama, OLLAMA_BASE_URL=http://ollama:11434, depends_on: ollama).
+   - Service 2: `app` (build từ Dockerfile, ports 8501:8501, environment LLM_PROVIDER=ollama, OLLAMA_BASE_URL=http://ollama:11434, depends_on: ollama).
 
-Kiểm tra cú pháp Docker configuration:
+4. app.py:
+   - Tích hợp 5 Tabs:
+     + Tab 1: 🔍 UC1 - Tra cứu Quy định (RBAC)
+     + Tab 2: ⚖️ UC2 - Đánh giá Gap Tuân thủ
+     + Tab 3: ⚔️ UC3 - Phát hiện Xung đột Quy định
+     + Tab 4: 📋 UC4 - Sinh Checklist Kiểm toán
+     + Tab 5: 📜 Tab 5 - Audit Trail & Logs
+   - Sidebar chọn Dual-Provider (Local Ollama Qwen3:0.6B / Cloud Gemini) và phân quyền Role RBAC.
+
+Kiểm tra cấu hình Docker:
 docker compose config
 ```
 
 ---
 
-# PROMPT 4 — Khởi chạy Docker Containers & Tải Local Model Qwen3:0.6B
+### PROMPT 4 — Khởi chạy Docker Containers & Tải Local Model Qwen3:0.6B
 
 ```text
 Thực thi quy trình đóng gói và tải model cục bộ:
@@ -208,34 +263,37 @@ Thực thi quy trình đóng gói và tải model cục bộ:
 3. Kiểm tra container status:
    docker compose ps
 
-4. Kiểm tra ứng dụng Web hoạt động tại http://localhost:8501.
+4. Kiểm tra ứng dụng Web hoạt động tại http://localhost:8501 với đầy đủ 5 Tabs.
 ```
 
 ---
 
-# PROMPT 5 — Security & Local Guardrail Testing cho Buổi 19
+### PROMPT 5 — Security & Local Guardrail Testing cho Buổi 19
 
 ```text
 Đóng vai Security Tester kiểm thử hệ thống Local AI Containerized Buổi 19.
 
+Chạy script kiểm thử an ninh:
+python scripts/security_tests_b19.py
+
 Thực hiện kiểm tra 6 hạng mục an toàn:
 1. Local Offline Privacy Check: Đảm bảo 100% prompt không gửi ra Internet khi dùng LLM_PROVIDER=ollama.
-2. RBAC Enforcement: Kiểm tra Role 'Staff' bị chặn 100% dữ liệu bảo mật rủi ro trên container.
-3. Citation Integrity: Mọi kết quả từ model Qwen3:0.6b đều có trích dẫn Điều/Khoản hợp lệ.
-4. Human Review Guardrail: 100% kết quả có review_status = "NEEDS_HUMAN_REVIEW".
-5. Audit Log Privacy: Không lộ API key hay secret trong audit log.
-6. Local Model Resilience: Thử nghiệm ngắt mạng Internet xem hệ thống AI vẫn phản hồi bình thường không.
+2. RBAC Enforcement: Kiểm tra Role 'Staff' bị chặn 100% dữ liệu bảo mật rủi ro / CAR trên container (UC1).
+3. Citation Integrity: Mọi kết quả từ 4 Use Cases đều có trích dẫn Điều/Khoản hợp lệ.
+4. Human Review Guardrail: 100% kết quả có cờ review_status = "NEEDS_HUMAN_REVIEW".
+5. Audit Log Privacy: Không lộ API key hay secret trong audit log (outputs/audit_trail.jsonl).
+6. Local Model Resilience: Hệ thống vẫn hoạt động và phản hồi chính xác khi ngắt mạng Internet.
 ```
 
 ---
 
-# PROMPT 6 — Audit Toàn bộ Project & Final Validation Buổi 19
+### PROMPT 6 — Audit Toàn bộ Project & Final Acceptance Report
 
 ```text
 Audit toàn bộ hệ thống Buổi 19 và tạo báo cáo nghiệm thu đóng gói Docker cuối cùng.
 
-Tạo file:
-scripts/verify_b19_docker.py
+Chạy kịch bản nghiệm thu:
+python scripts/verify_b19_docker.py
 
 Xuất báo cáo tại:
 outputs/b19_docker_acceptance_report.md
@@ -245,7 +303,7 @@ Kiểm tra các tiêu chí:
 2. Local Model Availability: Model Qwen3:0.6b (hoặc Qwen2.5) sẵn sàng trong Ollama registry.
 3. Dual Provider Switch: Chuyển đổi linh hoạt giữa Ollama và Gemini.
 4. Docker Compose Packaging: Dockerfile và docker-compose.yml hoàn chỉnh, hợp lệ.
-5. Local UC3 & UC4 Engines: Sinh được mâu thuẫn và checklist kiểm toán bằng mô hình local.
+5. Local AI Engines (UC1-UC4): Vận hành thành công cả 4 Use Cases (Lookup, Gap, Conflict, Checklist).
 6. Human Review & Audit Log: Đảm bảo đầy đủ cờ bảo vệ và nhật ký truy vết.
 
 Đánh giá tổng thể ở cuối file:
@@ -259,14 +317,18 @@ LOCAL AI SYSTEM READY: YES / NO
 
 ---
 
-# 6. Trình tự Demo cuối buổi 19
+# 7. Trình tự Demo cuối buổi 19
 
 1. **Trình bày Kiến trúc Local AI & Docker Compose:**
    - Mở Terminal chạy `docker compose ps` hiển thị 2 containers `agribank-ollama-server` và `agribank-ai-app` đang chạy ONLINE.
-2. **Demo Chế độ Local Offline với Qwen3:0.6B:**
+2. **Demo Toàn bộ 4 Use Cases ở Chế độ Local Offline với Qwen3:0.6B:**
    - Mở giao diện Streamlit tại `http://localhost:8501`.
-   - Chuyển chọn vai trò `Kiểm toán viên` -> Thực hiện phát hiện xung đột UC3 và sinh checklist kiểm toán UC4 hoàn toàn bằng mô hình Local SLM Qwen3:0.6B.
+   - **Tab 1 (UC1):** Đóng vai `Staff` tra cứu tài liệu CAR -> Hệ thống từ chối truy cập (Zero Leakage). Đóng vai `Risk_Manager` -> Trả lời chính xác có Citation.
+   - **Tab 2 (UC2):** Đối chiếu yêu cầu kỹ thuật xe tiền từ Thông tư 01/2014/TT-NHNN -> Phân loại `DAP_UNG` với quy định nội bộ Agribank 100/QĐ-NHNO-AT.
+   - **Tab 3 (UC3):** Quét xung đột quy định an toàn kho quỹ -> Phát hiện mâu thuẫn giữa quy định nội bộ cũ và Thông tư NHNN mới.
+   - **Tab 4 (UC4):** Sinh bộ Checklist kiểm toán hiện trường cho miền Quản trị Rủi ro & CAR.
+   - **Tab 5 (Audit Log):** Xem toàn bộ vết truy vết được ghi tự động vào `outputs/audit_trail.jsonl`.
 3. **Demo Ngắt Kết Nối Internet (Air-gapped Demo):**
-   - Rút dây mạng/Tắt Wifi -> Hệ thống vẫn tiếp tục chạy mượt mà, trả lời tra cứu và sinh checklist kiểm toán tức thì.
+   - Tắt Wifi/Rút mạng -> Toàn bộ 4 Use Cases vẫn phản hồi trơn tru trên Local Container.
 4. **Trình bày Báo cáo Nghiệm thu:**
    - Mở tệp `outputs/b19_docker_acceptance_report.md` minh chứng hệ thống đạt chuẩn `LOCAL AI SYSTEM READY: YES`.

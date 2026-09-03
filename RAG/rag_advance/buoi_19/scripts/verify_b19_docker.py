@@ -120,23 +120,37 @@ def verify_system_and_generate_report():
     print(f"  -> {c4_status}: {c4_result}")
 
     # -------------------------------------------------------------
-    # 5. Local UC3 & UC4 Compliance Engines
+    # 5. Local Core Engines (UC1, UC2, UC3, UC4)
     # -------------------------------------------------------------
-    print("\n[5/6] Kiểm tra Local UC3 & UC4 Engines...")
+    print("\n[5/6] Kiểm tra Local Core Engines (UC1, UC2, UC3, UC4)...")
+    lookup_engine = InternalLookupEngine()
+    gap_engine = ComplianceGapChecker()
     comp_engine = ComplianceCheckerEngine()
     chk_engine = AuditChecklistGeneratorEngine()
     
+    uc1_res = lookup_engine.query("Quy định an toàn kho quỹ và vận chuyển tiền mặt", user_role="Staff")
+    uc2_res = gap_engine.analyze_requirement(
+        external_requirement="Quy định tiêu chuẩn kỹ thuật an toàn kho quỹ",
+        external_doc_id="DOC_01",
+        external_chunk_id="CHK_01",
+        external_citation="Thông tư 01/2014/TT-NHNN - Điều 50"
+    )
     c_results = comp_engine.run_trial_tests()
     chk_results = chk_engine.run_trial_tests()
     
-    if len(c_results) > 0 and len(chk_results) > 0:
-        c5_result = f"Phát hiện {len(c_results)} cặp xung đột (UC3) & Sinh {len(chk_results)} mục checklist (UC4) thành công"
+    uc1_ok = uc1_res.get("status") == "SUCCESS"
+    uc2_ok = uc2_res.get("classification") in ["DAP_UNG", "THIEU", "CHENH_LECH", "CHUA_DU_BANG_CHUNG"]
+    uc3_ok = len(c_results) > 0
+    uc4_ok = len(chk_results) > 0
+
+    if uc1_ok and uc2_ok and uc3_ok and uc4_ok:
+        c5_result = f"Thành công 4/4 Engines: UC1 (Lookup), UC2 (Gap: {uc2_res['classification']}), UC3 ({len(c_results)} xung đột), UC4 ({len(chk_results)} checklist)"
         c5_status = "PASS"
     else:
-        c5_result = "Lỗi thực thi engines UC3 hoặc UC4"
+        c5_result = f"Lỗi thực thi engines: UC1={uc1_ok}, UC2={uc2_ok}, UC3={uc3_ok}, UC4={uc4_ok}"
         c5_status = "FAIL"
     eval_status["LOCAL COMPLIANCE ENGINES"] = c5_status
-    report_lines.append(f"| 5 | **Local UC3 & UC4 Engines** | Sinh mâu thuẫn & checklist kiểm toán chuẩn xác | {c5_result} | **{c5_status}** |")
+    report_lines.append(f"| 5 | **Local AI Engines (UC1-UC4)** | Vận hành đầy đủ 4 Use Cases trên môi trường Local SLM | {c5_result} | **{c5_status}** |")
     print(f"  -> {c5_status}: {c5_result}")
 
     # -------------------------------------------------------------
@@ -144,10 +158,11 @@ def verify_system_and_generate_report():
     # -------------------------------------------------------------
     print("\n[6/6] Kiểm tra Human Review Guardrail & Audit Log...")
     log_file = PROJECT_ROOT / "outputs" / "audit_trail.jsonl"
-    all_flagged = all(r.get("review_status") == "NEEDS_HUMAN_REVIEW" for r in c_results + chk_results)
+    all_results = [uc1_res, uc2_res] + c_results + chk_results
+    all_flagged = all(r.get("review_status") == "NEEDS_HUMAN_REVIEW" for r in all_results)
     
     if all_flagged and log_file.exists():
-        c6_result = f"100% kết quả có cờ `NEEDS_HUMAN_REVIEW` & đã ghi nhận vết kiểm toán vào `{log_file.name}`"
+        c6_result = f"100% kết quả từ 4 Use Cases có cờ `NEEDS_HUMAN_REVIEW` & ghi log vào `{log_file.name}`"
         c6_status = "PASS"
     else:
         c6_result = "Thiếu cờ guardrail hoặc không có audit log"

@@ -54,9 +54,19 @@ class ComplianceGapChecker:
         self.provider = LLM_PROVIDER
         self.ollama_client = None
         self.gemini_client = None
-        self.df_chunks = None
+        self.custom_model = None
+        self.custom_base_url = None
 
         self._init_data()
+        self._init_llm()
+
+    def set_provider(self, provider: str, model: str = None, base_url: str = None):
+        """Dynamically update LLM provider and re-initialize client."""
+        self.provider = provider.lower().strip()
+        if model:
+            self.custom_model = model
+        if base_url:
+            self.custom_base_url = base_url
         self._init_llm()
 
     def _resolve_path(self, rel_path: str) -> str:
@@ -76,7 +86,7 @@ class ComplianceGapChecker:
 
     def _init_llm(self):
         if self.provider == "ollama":
-            self.ollama_client = OllamaClient()
+            self.ollama_client = OllamaClient(base_url=self.custom_base_url, model=self.custom_model)
         elif self.provider == "gemini" and GEMINI_API_KEY:
             try:
                 from google import genai
